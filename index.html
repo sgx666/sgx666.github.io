@@ -80,22 +80,24 @@
 <h3 id="git命令学习"><a href="#git命令学习" class="headerlink" title="git命令学习"></a>git命令学习</h3><ol>
 <li>创建版本库相关命令</li>
 </ol>
-   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init         <span class="comment">//当前目录变为可管理的仓库</span></span><br><span class="line">git add xxx.xx    <span class="comment">//讲xxx.xx添加到git仓库中</span></span><br><span class="line">git commit -m <span class="string">&quot;message&quot;</span>        <span class="comment">//将文件提交至仓库 message为本次提交记录说明</span></span><br><span class="line">git status        <span class="comment">//查看当前仓库状态</span></span><br><span class="line">git diff xxx.xx    <span class="comment">//查看xxx.xx 修改内容</span></span><br><span class="line"><span class="comment">//可使用 git add 添加不同文件，然后使用 git commit 一次提交多个文件</span></span><br></pre></td></tr></table></figure>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git init         <span class="comment">//当前目录变为可管理的仓库</span></span><br><span class="line">git add xxx.xx    <span class="comment">//讲xxx.xx添加到git仓库中</span></span><br><span class="line">git commit -m <span class="string">&quot;message&quot;</span>        <span class="comment">//将文件提交至仓库 message为本次提交记录说明</span></span><br><span class="line">git status        <span class="comment">//查看当前仓库状态</span></span><br><span class="line">git diff xxx.xx    <span class="comment">//查看xxx.xx 修改内容</span></span><br><span class="line"><span class="comment">//可使用 git add 添加不同文件，然后使用 git commit 一次提交多个文件</span></span><br><span class="line"><span class="comment">//git add是将当前修改添加至暂存区，当我们修改文件时，在git commit前使用git add将最新修改添加至暂存区才可正确提交相关文件</span></span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li><p>git代码版本管理</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git log     <span class="comment">//查看提交记录</span></span><br><span class="line">git log --pretty=oneline     <span class="comment">//单行查看提交记录 可看到版本号</span></span><br><span class="line">git reset --hard HEAD^        <span class="comment">//回退至上个版本 上一个版本就是HEAD^，上上一个是HEAD^^，上n个版本写成HEAD~n。</span></span><br><span class="line">git reset --hard commit_id     <span class="comment">//回退至指定版本（commit_id：版本号）</span></span><br><span class="line">git reflog     <span class="comment">//查看命令历史</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">git log     <span class="comment">//查看提交记录</span></span><br><span class="line">git log --pretty=oneline     <span class="comment">//单行查看提交记录 可看到版本号</span></span><br><span class="line">git reset --hard HEAD^        <span class="comment">//回退至上个版本 上一个版本就是HEAD^，上上一个是HEAD^^，上n个版本写成HEAD~n。</span></span><br><span class="line">git reset --hard commit_id     <span class="comment">//回退至指定版本（commit_id：版本号）</span></span><br><span class="line">git reflog     <span class="comment">//查看命令历史</span></span><br><span class="line">git checkot -- <span class="xml"><span class="tag">&lt;<span class="name">file</span>&gt;</span>        //撤销当前修改（优先回退至暂存区最新版本/其次为版本库） 例：git checkout -- readme.txt</span></span><br><span class="line">git reset HEAD &lt;file&gt;        //把暂存区的修改回退至工作区 例：git reset HEAD readme.txt</span><br><span class="line">//git 删除文件</span><br><span class="line">git rm &lt;file&gt;</span><br><span class="line">git commit</span><br><span class="line">//撤销删除</span><br><span class="line">git checkout -- &lt;file&gt;</span><br><span class="line">//git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”</span><br></pre></td></tr></table></figure>
 
 
 
 </li>
 </ol>
-<p>3. </p>
+<ol start="3">
+<li></li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/09/git%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/" data-id="ckdmpfqzd0000w4vt2az24lcp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/09/git%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0/" data-id="ckdmpgtfk000060vtegnd9byh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -134,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/04/%E7%AC%AC%E4%BA%8C%E5%A4%A9%E5%AD%A6%E4%B9%A0hexo/" data-id="ckdmpfqzk0002w4vt935hg24q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/04/%E7%AC%AC%E4%BA%8C%E5%A4%A9%E5%AD%A6%E4%B9%A0hexo/" data-id="ckdmpgtfq000260vt5hvvadg2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -175,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/03/%E7%AC%AC%E4%B8%80%E5%A4%A9%E5%AD%A6%E4%B9%A0hexo/" data-id="ckdmpfqzj0001w4vtgvo1gpel" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/03/%E7%AC%AC%E4%B8%80%E5%A4%A9%E5%AD%A6%E4%B9%A0hexo/" data-id="ckdmpgtfo000160vtbobncrve" class="article-share-link">Share</a>
       
       
     </footer>
